@@ -66,8 +66,8 @@
                         <option value="11">Kelas: 11</option>
                         <option value="12">Kelas: 12</option>
                     </select>
-                    <select class="form-select mb-3" id="jurusan" name="jurusan" aria-label="Default select example">
-                        <option selected>Jurusan:</option>
+                    <select class="form-select mt-4 mb-4" id="jurusan" name="jurusan" aria-label="Default select example">
+                    <option selected>Jurusan:</option>
                         <option value="Rekayasa Perangkat Lunak">Jurusan: Rekayasa Perangkat
                             Lunak</option>
                         <option value="Desain Komunikasi Visual (1)">Jurusan: Desain Komunikasi
