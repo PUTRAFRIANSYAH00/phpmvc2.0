@@ -2,7 +2,7 @@
 
 class User_model
 {
-    private $nama = 'Cut';
+    private $nama = 'Putra Afriansyah';
 
     public function getUser()
     {
