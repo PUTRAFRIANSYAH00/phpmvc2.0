@@ -1,8 +1,8 @@
 <?php
 
-class Siswa_model
+class Kelas_model
 {
-    private $table = 'siswa';
+    private $table = 'kelas';
     private $db;
 
     public function __construct()
@@ -10,38 +10,35 @@ class Siswa_model
         $this->db = new Database;
     }
 
-    public function getAllSiswa()
+    public function getAllKelas()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
 
-    public function getSiswaById($id)
+    public function getKelasById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
 
-    public function tambahDataSiswa($data)
+    public function tambahDataKelas($data)
     {
-        $query = "INSERT INTO siswa 
-        VALUES ('', :nama, :umur, :kelas, :jurusan)";
+        $query = "INSERT INTO kelas 
+        VALUES ('', :kelas)";
 
         $this->db->query($query);
-        $this->db->bind('nama', $data['nama']);
-        $this->db->bind('umur', $data['umur']);
         $this->db->bind('kelas', $data['kelas']);
-        $this->db->bind('jurusan', $data['jurusan']);
 
         $this->db->execute();
 
         return $this->db->rowCount();
     }
 
-    public function hapusDataSiswa($id)
+    public function hapusDataKelas($id)
     {
-        $query = "DELETE FROM siswa WHERE id = :id";
+        $query = "DELETE FROM kelas WHERE id = :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
@@ -50,20 +47,14 @@ class Siswa_model
         return $this->db->rowCount();
     }
 
-    public function ubahDataSiswa($data)
+    public function ubahDataKelas($data)
     {
-        $query = "UPDATE siswa SET 
-        nama = :nama,
-        umur = :umur,
-        kelas = :kelas,
-        jurusan = :jurusan
+        $query = "UPDATE kelas SET 
+        kelas = :kelas
         WHERE id = :id";
 
         $this->db->query($query);
-        $this->db->bind(':nama', $data['nama']);
-        $this->db->bind(':umur', $data['umur']);
         $this->db->bind(':kelas', $data['kelas']);
-        $this->db->bind(':jurusan', $data['jurusan']);
         $this->db->bind(':id', $data['id']);
 
         try {
@@ -74,10 +65,10 @@ class Siswa_model
         }
     }
 
-    public function cariDataSiswa()
+    public function cariDataKelas()
     {
         $keyword = $_POST['keyword'];
-        $query = "SELECT * FROM siswa WHERE nama LIKE :keyword";
+        $query = "SELECT * FROM kelas WHERE nama LIKE :keyword";
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();

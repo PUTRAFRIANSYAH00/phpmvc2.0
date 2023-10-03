@@ -24,6 +24,12 @@
                     <li class="nav-item"></li>
                     <a class="nav-link" href="<?= BASEURL; ?>siswa">Siswa</a>
                     </li>
+                    <a class="nav-link" href="<?= BASEURL; ?>Kelas">Kelas</a>
+                    </li>
+                    <a class="nav-link" href="<?= BASEURL; ?>Jurusan">Jurusan</a>
+                    </li>
+                    <a class="nav-link" href="<?= BASEURL; ?>Guru">Guru</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= BASEURL; ?>about">About</a>
                     </li>
